@@ -1,0 +1,7 @@
+Total Customers = DISTINCTCOUNT(Customer_Churn_Cleaned[Customer_ID])
+Customer Rows = COUNTROWS(Customer_Churn_Cleaned)
+Churned Customers = CALCULATE([Total Customers], Customer_Churn_Cleaned[Churn] = "Yes")
+Retained Customers = CALCULATE([Total Customers], Customer_Churn_Cleaned[Churn] = "No")
+Churn Rate % = DIVIDE([Churned Customers], [Total Customers], 0)
+Average Monthly Charges = AVERAGE(Customer_Churn_Cleaned[Monthly_Charges])
+Average Tenure = AVERAGE(Customer_Churn_Cleaned[Tenure_Months])
